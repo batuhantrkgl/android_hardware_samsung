@@ -850,8 +850,7 @@ static int enable_snd_device(struct audio_device *adev,
         return -EINVAL;
 
     if (snd_device == SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES) {
-        ALOGV("Request to enable combo device: enable individual devices\n");
-        enable_snd_device(adev, uc_info, SND_DEVICE_OUT_SPEAKER);
+        ALOGV("Request to enable combo device: enable individual devices\n");;
         enable_snd_device(adev, uc_info, SND_DEVICE_OUT_HEADPHONES);
         return 0;
     }
@@ -905,7 +904,6 @@ int disable_snd_device(struct audio_device *adev,
 
     if (snd_device == SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES) {
         ALOGV("Request to disable combo device: disable individual devices\n");
-        disable_snd_device(adev, uc_info, SND_DEVICE_OUT_SPEAKER);
         disable_snd_device(adev, uc_info, SND_DEVICE_OUT_HEADPHONES);
         return 0;
     }
